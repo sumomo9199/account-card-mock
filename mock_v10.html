@@ -469,7 +469,7 @@
     }
 
     .card-name {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       color: #333333;
       text-align: center;
@@ -478,12 +478,14 @@
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       line-height: 1.4;
-      min-height: calc(13px * 1.4 * 2);
+      min-height: calc(12px * 1.4 * 2);
       margin-bottom: -4px;
     }
 
     @media (min-width: 768px) {
       .card-name {
+        font-size: 13px;
+        min-height: calc(13px * 1.4 * 2);
         margin-bottom: -6px;
       }
     }
@@ -507,27 +509,52 @@
     }
 
     .card-meta-row svg {
-      width: 13px;
-      height: 13px;
+      width: 12px;
+      height: 12px;
       flex-shrink: 0;
     }
 
-    .card-followers {
-      font-size: 13px;
-      font-weight: 500;
-      color: #333333;
+    @media (min-width: 768px) {
+      .card-meta-row svg {
+        width: 13px;
+        height: 13px;
+      }
     }
 
-    .card-genre {
+    .card-followers {
       font-size: 12px;
       font-weight: 500;
       color: #333333;
     }
 
-    .card-posts {
-      font-size: 13px;
+    @media (min-width: 768px) {
+      .card-followers {
+        font-size: 13px;
+      }
+    }
+
+    .card-genre {
+      font-size: 11px;
       font-weight: 500;
       color: #333333;
+    }
+
+    @media (min-width: 768px) {
+      .card-genre {
+        font-size: 12px;
+      }
+    }
+
+    .card-posts {
+      font-size: 12px;
+      font-weight: 500;
+      color: #333333;
+    }
+
+    @media (min-width: 768px) {
+      .card-posts {
+        font-size: 13px;
+      }
     }
 
     .unit {
