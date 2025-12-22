@@ -445,33 +445,53 @@
     /* Operation History Label */
     .operation-label {
       position: absolute;
-      top: -27px;
-      left: -30px;
-      width: 80px;
-      height: 75px;
-      background: linear-gradient(124deg, #E846C2 0%, #FF5036 100%);
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding-bottom: 2px;
-      transform: rotate(-42deg);
-      border-radius: 0 0 10px 10px;
+      top: 0;
+      left: 0;
+      width: 52px;
+      height: 52px;
+      overflow: hidden;
+      pointer-events: none;
+      border-top-left-radius: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .operation-label {
+        width: 56px;
+        height: 56px;
+      }
+    }
+
+    .operation-label-inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 52px 52px 0 0;
+      border-color: #E846C2 transparent transparent transparent;
+    }
+
+    @media (min-width: 768px) {
+      .operation-label-inner {
+        border-width: 56px 56px 0 0;
+      }
     }
 
     .operation-label-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
       color: white;
-      font-weight: 900;
-      letter-spacing: 0.5px;
+      font-size: 9px;
+      font-weight: 700;
       text-align: center;
-      transform: rotate(0deg);
+      transform: translate(-50%, -50%) translate(-9px, -7px) rotate(-45deg);
+      white-space: nowrap;
     }
 
     .operation-label-num {
       font-size: 12px;
-    }
-
-    .operation-label-unit {
-      font-size: 9px;
     }
 
     .card-avatar {
@@ -491,7 +511,7 @@
     }
 
     .card-name {
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 600;
       color: #333333;
       text-align: center;
@@ -500,14 +520,12 @@
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       line-height: 1.4;
-      min-height: calc(12px * 1.4 * 2);
+      min-height: calc(13px * 1.4 * 2);
       margin-bottom: -4px;
     }
 
     @media (min-width: 768px) {
       .card-name {
-        font-size: 13px;
-        min-height: calc(13px * 1.4 * 2);
         margin-bottom: -6px;
       }
     }
@@ -531,52 +549,27 @@
     }
 
     .card-meta-row svg {
-      width: 12px;
-      height: 12px;
+      width: 13px;
+      height: 13px;
       flex-shrink: 0;
     }
 
-    @media (min-width: 768px) {
-      .card-meta-row svg {
-        width: 13px;
-        height: 13px;
-      }
-    }
-
     .card-followers {
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 500;
       color: #333333;
-    }
-
-    @media (min-width: 768px) {
-      .card-followers {
-        font-size: 13px;
-      }
     }
 
     .card-genre {
-      font-size: 11px;
-      font-weight: 500;
-      color: #333333;
-    }
-
-    @media (min-width: 768px) {
-      .card-genre {
-        font-size: 12px;
-      }
-    }
-
-    .card-posts {
       font-size: 12px;
       font-weight: 500;
       color: #333333;
     }
 
-    @media (min-width: 768px) {
-      .card-posts {
-        font-size: 13px;
-      }
+    .card-posts {
+      font-size: 13px;
+      font-weight: 500;
+      color: #333333;
     }
 
     .unit {
@@ -913,16 +906,16 @@
 
       let labelText = '';
       if (diffMonths <= 3) {
-        labelText = '<span class="operation-label-num">3</span><span class="operation-label-unit">ヶ月以内</span>';
+        labelText = '<span class="operation-label-num">3</span>ヶ月以内';
       } else if (diffMonths <= 6) {
-        labelText = '<span class="operation-label-num">6</span><span class="operation-label-unit">ヶ月以内</span>';
+        labelText = '<span class="operation-label-num">6</span>ヶ月以内';
       } else if (diffMonths <= 12) {
-        labelText = '<span class="operation-label-num">1</span><span class="operation-label-unit">年以内</span>';
+        labelText = '<span class="operation-label-num">1</span>年以内';
       } else {
         return ''; // 1年超過はラベルなし
       }
 
-      return `<div class="operation-label"><span class="operation-label-text">${labelText}</span></div>`;
+      return `<div class="operation-label"><div class="operation-label-inner"></div><span class="operation-label-text">${labelText}</span></div>`;
     }
 
     const cardGrid = document.getElementById('cardGrid');
