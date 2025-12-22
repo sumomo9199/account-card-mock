@@ -20,7 +20,7 @@
 | ベース | [mock.html](https://sumomo9199.github.io/account-card-mock/mock.html) | 本番に近い状態（基準） |
 | v1 | [mock_v1.html](https://sumomo9199.github.io/account-card-mock/mock_v1.html) | 名前2行化 |
 | v2 | [mock_v2.html](https://sumomo9199.github.io/account-card-mock/mock_v2.html) | 名前左寄せ |
-| v3 | [mock_v3.html](https://sumomo9199.github.io/account-card-mock/mock_v3.html) | 日付→投稿数 |
+| v3 | [mock_v3.html](https://sumomo9199.github.io/account-card-mock/mock_v3.html) | 日付→投稿数 / 万億表記 |
 | v4 | [mock_v4.html](https://sumomo9199.github.io/account-card-mock/mock_v4.html) | 単位縮小 |
 | v5 | [mock_v5.html](https://sumomo9199.github.io/account-card-mock/mock_v5.html) | 余白詰め |
 | v6 | [mock_v6.html](https://sumomo9199.github.io/account-card-mock/mock_v6.html) | 画像縮小 |
@@ -41,7 +41,7 @@
       │
       ├─ v2: 名前左寄せ（v1の派生・別ルート）
       │
-      └─ v3: 日付→投稿数
+      └─ v3: 日付→投稿数 / 万億表記
           │
           └─ v4: 単位縮小
               │
@@ -108,7 +108,7 @@
 
 ---
 
-### v3: 日付→投稿数
+### v3: 日付→投稿数 / 万億表記
 **v1からの変更**: 3行目を日付から投稿数に変更、フォロワー数を日本語単位表示
 
 | 変更項目 | Before | After |
